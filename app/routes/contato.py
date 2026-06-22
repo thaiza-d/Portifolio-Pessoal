@@ -12,11 +12,6 @@ load_dotenv()
 
 router = APIRouter(prefix="/contato", tags=["contato"])
 
-@router.get("/", response_model=list[ContatoResponse])
-def receber_mensagem(db: Session=Depends(get_db)):
-    result = db.query(Contato).all()
-    return result
-
 def enviar_email(nome, email, mensagem):
     msg = MIMEText(f"""
     Nome: {nome}

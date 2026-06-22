@@ -29,7 +29,7 @@ window.enviar = async function () {
         btnEnviar.textContent = "Enviando..."
 
         const resposta = await fetch(
-            "http://127.0.0.1:8000/contato/",
+            "https://portifolio-thaiza.onrender.com/contato/",
             {
                 method: "POST",
                 headers: {
