@@ -34,8 +34,7 @@ def enviar_email(nome, email, mensagem):
 @router.post("/")
 def enviar_mensagem(
     envio: ContatoCreate,
-    db: Session = Depends(get_db),
-    background_tasks: BackgroundTasks = None
+    background_tasks: BackgroundTasks, db: Session = Depends(get_db)
 ):
     nova_mensagem = Contato(
         nome=envio.nome,

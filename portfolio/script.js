@@ -74,3 +74,15 @@ window.fechar = async function() {
         .getElementById("modal")
         .classList.remove("aberto")
 }
+
+function mostrarErro(campo, idErro, mensagemErro) {
+    campo.classList.add("input-erro")
+    const span = document.getElementById(idErro)
+    span.textContent = mensagemErro
+    span.classList.add("visivel")
+}
+
+function limparErros() {
+    document.querySelectorAll('.erro').forEach(e => e.classList.remove('visivel'))
+    document.querySelectorAll('.input-erro').forEach(e => e.classList.remove('input-erro'))
+}
